@@ -40,4 +40,14 @@ def strip_vowels(text: Optional[str] = TEXT) -> Tuple[str, int]:
        The str/int/Optional/Tuple types in the function definition above are part
        of Python's new type hinting:
        https://docs.python.org/3/library/typing.html"""
-    pass
+    new_list = list(text)
+    count = 0
+    for i in range(len(new_list)):
+      char = new_list[i]
+      if char.lower() in VOWELS:
+        new_list[i]  = "*"
+        count += 1
+    return (''.join(new_list), count)
+pass
+
+
